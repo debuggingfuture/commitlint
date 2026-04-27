@@ -3,9 +3,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { globSync } from "glob";
-import camelCase from "lodash.camelcase";
 
 import * as ensure from "./index.js";
+
+const camelCase = (s: string) => s.replace(/-(\w)/g, (_, c) => c.toUpperCase());
 
 const __dirname = path.resolve(fileURLToPath(import.meta.url), "..");
 
